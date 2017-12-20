@@ -1,0 +1,77 @@
+<%= form_with(model: earthquake, local: true) do |form| %>
+  <% if earthquake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(earthquake.errors.count, "error") %> prohibited this earthquake from being saved:</h2>
+
+      <ul>
+      <% earthquake.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time, id: :earthquake_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :earthquake_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :earthquake_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :depth %>
+    <%= form.text_field :depth, id: :earthquake_depth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mag %>
+    <%= form.text_field :mag, id: :earthquake_mag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :magType %>
+    <%= form.text_field :magType, id: :earthquake_magType %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nst %>
+    <%= form.number_field :nst, id: :earthquake_nst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gap %>
+    <%= form.text_field :gap, id: :earthquake_gap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dmin %>
+    <%= form.text_field :dmin, id: :earthquake_dmin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rms %>
+    <%= form.text_field :rms, id: :earthquake_rms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :networkCode %>
+    <%= form.text_field :networkCode, id: :earthquake_networkCode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quakeId %>
+    <%= form.text_field :quakeId, id: :earthquake_quakeId %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
