@@ -4,7 +4,10 @@ class EarthquakesController < ApplicationController
   # GET /earthquakes
   # GET /earthquakes.json
   def index
-    @earthquakes = Earthquake.all
+    
+    @search = EarthquakeSearch.new(params[:search])
+    @earthquakes = @search.scope
+    #@earthquakes = Earthquake.all
   end
 
   # GET /earthquakes/1
