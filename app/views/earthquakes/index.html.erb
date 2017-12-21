@@ -26,7 +26,7 @@
         <tbody>
         <% @earthquakes.each do |earthquake| %>
           <tr>
-          <td><%= earthquake.time %></td>
+          <td><%= earthquake.time.strftime("%Y/%m/%d:%H:%M") %></td>
           <td><%= earthquake.latitude %></td>
           <td><%= earthquake.longitude %></td>
           <td><%= earthquake.depth %></td>
