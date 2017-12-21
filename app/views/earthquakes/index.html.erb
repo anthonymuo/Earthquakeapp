@@ -2,48 +2,51 @@
 
 <h1>Earthquakes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Depth</th>
-      <th>Mag</th>
-      <th>Magtype</th>
-      <th>Nst</th>
-      <th>Gap</th>
-      <th>Dmin</th>
-      <th>Rms</th>
-      <th>Networkcode</th>
-      <th>Quakeid</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @earthquakes.each do |earthquake| %>
-      <tr>
-        <td><%= earthquake.time %></td>
-        <td><%= earthquake.latitude %></td>
-        <td><%= earthquake.longitude %></td>
-        <td><%= earthquake.depth %></td>
-        <td><%= earthquake.mag %></td>
-        <td><%= earthquake.magType %></td>
-        <td><%= earthquake.nst %></td>
-        <td><%= earthquake.gap %></td>
-        <td><%= earthquake.dmin %></td>
-        <td><%= earthquake.rms %></td>
-        <td><%= earthquake.networkCode %></td>
-        <td><%= earthquake.quakeId %></td>
-        <td><%= link_to 'Show', earthquake %></td>
-        <td><%= link_to 'Edit', edit_earthquake_path(earthquake) %></td>
-        <td><%= link_to 'Destroy', earthquake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="media">     
+  <div class="media-body">   
+    <table class="table table-hover">
+      <thead>
+        <tr>
+        <th>Time</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Depth</th>
+        <th>Mag</th>
+        <th>Magtype</th>
+        <th>Nst</th>
+        <th>Gap</th>
+        <th>Dmin</th>
+        <th>Rms</th>
+        <th>Networkcode</th>
+        <th>Quakeid</th>
+        <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+        <% @earthquakes.each do |earthquake| %>
+          <tr>
+          <td><%= earthquake.time %></td>
+          <td><%= earthquake.latitude %></td>
+          <td><%= earthquake.longitude %></td>
+          <td><%= earthquake.depth %></td>
+          <td><%= earthquake.mag %></td>
+          <td><%= earthquake.magType %></td>
+          <td><%= earthquake.nst %></td>
+          <td><%= earthquake.gap %></td>
+          <td><%= earthquake.dmin %></td>
+          <td><%= earthquake.rms %></td>
+          <td><%= earthquake.networkCode %></td>
+          <td><%= earthquake.quakeId %></td>
+          <td><%= link_to 'Show', earthquake, Class: 'btn btn-mini' %></td>
+          <td><%= link_to 'Edit', edit_earthquake_path(earthquake), Class: 'btn btn-mini btn-success' %></td>
+          <td><%= link_to 'Destroy', earthquake, method: :delete, Class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
 <br>
 
 <%= link_to 'New Earthquake', new_earthquake_path %>
