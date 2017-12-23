@@ -1,0 +1,53 @@
+commit 51c2ed78f6075cc2a25ca88ec18977a943a8b620
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 17:05:08 2017 +0000
+
+    index adjusted
+
+commit 34fd5a901cb0064b8cdfe6636b065f42295ffba8
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 10:57:11 2017 +0000
+
+    index modified
+
+commit f5642d6d793795d98a7dc28dbfbbc07cd62f8587
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 04:24:26 2017 +0000
+
+    styling Table
+
+commit 1dd9de85720b462a36d098c2e2137cad86873df3
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 03:23:28 2017 +0000
+
+    fixing Bootstrap Issues
+
+commit fe5f811d540352476d83845f3d4ad8a077d3cecd
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 02:48:07 2017 +0000
+
+    bootstrap added for styling
+
+commit 65d2ee22a1dd9dbbd66aa5387011e1b9b06bb0e3
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 01:40:23 2017 +0000
+
+    Testin git Branch1
+
+commit f883a77f43c65431a37321a1012598e5ff42c873
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Thu Dec 21 01:00:00 2017 +0000
+
+    Navigation, welcome controller and root configured
+
+commit 6b9650d402559aaa9a58e935377a3760b63b681f
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Wed Dec 20 23:18:31 2017 +0000
+
+    first push to Heroku
+
+commit dad0c7be99dcea07656acd68e9fb451255d5059d
+Author: anthonymuo <a.c.muo.16@aberdeen.ac.uk>
+Date:   Wed Dec 20 22:27:32 2017 +0000
+
+    first commit apps
