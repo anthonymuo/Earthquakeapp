@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221233605) do
+ActiveRecord::Schema.define(version: 20171224211420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,38 @@ ActiveRecord::Schema.define(version: 20171221233605) do
     t.decimal "rms"
     t.string "networkCode"
     t.string "quakeId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recordingstations", force: :cascade do |t|
+    t.string "quakeId"
+    t.date "updated"
+    t.string "place"
+    t.string "quaketype"
+    t.decimal "horizontalError"
+    t.decimal "depthError"
+    t.decimal "magError"
+    t.integer "magNst"
+    t.string "status"
+    t.string "locationSource"
+    t.string "stationCode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stations", force: :cascade do |t|
+    t.string "quakeId"
+    t.datetime "updated"
+    t.string "place"
+    t.string "type"
+    t.decimal "horizontalError"
+    t.decimal "depthError"
+    t.decimal "magError"
+    t.integer "magNst"
+    t.string "status"
+    t.string "locationSource"
+    t.string "stationCode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

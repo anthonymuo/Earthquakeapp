@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quakeid:</strong>
+  <%= @recordingstation.quakeId %>
+</p>
+
+<p>
+  <strong>Updated:</strong>
+  <%= @recordingstation.updated %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @recordingstation.place %>
+</p>
+
+<p>
+  <strong>Quaketype:</strong>
+  <%= @recordingstation.quaketype %>
+</p>
+
+<p>
+  <strong>Horizontalerror:</strong>
+  <%= @recordingstation.horizontalError %>
+</p>
+
+<p>
+  <strong>Deptherror:</strong>
+  <%= @recordingstation.depthError %>
+</p>
+
+<p>
+  <strong>Magerror:</strong>
+  <%= @recordingstation.magError %>
+</p>
+
+<p>
+  <strong>Magnst:</strong>
+  <%= @recordingstation.magNst %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @recordingstation.status %>
+</p>
+
+<p>
+  <strong>Locationsource:</strong>
+  <%= @recordingstation.locationSource %>
+</p>
+
+<p>
+  <strong>Stationcode:</strong>
+  <%= @recordingstation.stationCode %>
+</p>
+
+<%= link_to 'Edit', edit_recordingstation_path(@recordingstation) %> |
+<%= link_to 'Back', recordingstations_path %>

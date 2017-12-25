@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recordingstations</h1>
+
+
+  <div class="media">     
+  <div class="media-body">   
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Quakeid</th>
+          <th>Updated</th>
+          <th>Place</th>
+          <th>Quaketype</th>
+          <th>Horizontalerror</th>
+          <th>Deptherror</th>
+          <th>Magerror</th>
+          <th>Magnst</th>
+          <th>Status</th>
+          <th>Locationsource</th>
+          <th>Stationcode</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @recordingstations.each do |recordingstation| %>
+          <tr>
+            <td><%= recordingstation.quakeId %></td>
+            <td><%= recordingstation.updated %></td>
+            <td><%= recordingstation.place %></td>
+            <td><%= recordingstation.quaketype %></td>
+            <td><%= recordingstation.horizontalError %></td>
+            <td><%= recordingstation.depthError %></td>
+            <td><%= recordingstation.magError %></td>
+            <td><%= recordingstation.magNst %></td>
+            <td><%= recordingstation.status %></td>
+            <td><%= recordingstation.locationSource %></td>
+            <td><%= recordingstation.stationCode %></td>
+            <td><%= link_to 'Show', recordingstation %></td>
+            <td><%= link_to 'Edit', edit_recordingstation_path(recordingstation) %></td>
+            <td><%= link_to 'Destroy', recordingstation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
+
+<br>
+
+<h3>Import Recordingstations</h3>
+<%= form_tag import_recordingstations_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Uplaod Recordingstations" %>
+    <% end %>
+    
+
+<%= link_to 'New Recordingstation', new_recordingstation_path %>

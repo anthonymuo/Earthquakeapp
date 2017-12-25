@@ -1,0 +1,2 @@
+module RecordingstationsHelper
+end
