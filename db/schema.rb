@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20171226034701) do
     t.decimal "mag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
   end
 
   create_table "quakelocations", force: :cascade do |t|
