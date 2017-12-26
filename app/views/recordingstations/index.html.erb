@@ -37,10 +37,10 @@
             <td><%= recordingstation.status %></td>
             <td><%= recordingstation.locationSource %></td>
             <td><%= recordingstation.stationCode %></td>
-            <td><%= link_to 'Show', recordingstation %></td>
-            <td><%= link_to 'Edit', edit_recordingstation_path(recordingstation) %></td>
-            <td><%= link_to 'Destroy', recordingstation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+            <td><%= link_to 'Show', recordingstation, Class: 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_recordingstation_path(recordingstation), Class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', recordingstation, method: :delete, Class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+            </tr>
         <% end %>
       </tbody>
     </table>

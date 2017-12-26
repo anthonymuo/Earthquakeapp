@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quakelocations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Time</th>
+      <th>Mag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quakelocations.each do |quakelocation| %>
+      <tr>
+        <td><%= quakelocation.address %></td>
+        <td><%= quakelocation.latitude %></td>
+        <td><%= quakelocation.longitude %></td>
+        <td><%= quakelocation.time %></td>
+        <td><%= quakelocation.mag %></td>
+        
+         <p>
+         <strong>Address:</strong>
+         <%= quakelocation.address %>
+         </p>
+        
+         <p>
+        
+        
+        <td><%= link_to 'Show', quakelocation %></td>
+        <td><%= link_to 'Edit', edit_quakelocation_path(quakelocation) %></td>
+        <td><%= link_to 'Destroy', quakelocation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quakelocation', new_quakelocation_path %>

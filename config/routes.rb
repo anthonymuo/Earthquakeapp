@@ -1,4 +1,6 @@
  Rails.application.routes.draw do
+  resources :quakelocations
+  resources :locations
   resources :recordingstations do 
    collection {post :import }
   end

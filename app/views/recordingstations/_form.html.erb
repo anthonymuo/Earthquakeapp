@@ -1,72 +1,92 @@
-<%= form_with(model: recordingstation, local: true) do |form| %>
-  <% if recordingstation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recordingstation.errors.count, "error") %> prohibited this recordingstation from being saved:</h2>
+<div class="row">
 
-      <ul>
-      <% recordingstation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= form_with(model: recordingstation, local: true) do |form| %>
+      <% if recordingstation.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(recordingstation.errors.count, "error") %> prohibited this recordingstation from being saved:</h2>
+    
+          <ul>
+          <% recordingstation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+    
+      <div class="control-group">
+        <%= form.label :quakeId, class: 'control-label' %>
+        <div class="controls"
+        <%= form.text_field :quakeId, id: :recordingstation_quakeId %>
+      </div>
+      </div>
+    
+      <div class="control-group">
+        <%= form.label :updated, class: 'control-label'  %>
+        <div class="controls"
+        <%= form.date_select :updated, id: :recordingstation_updated %>
+        </div>
+      </div>
+    
+      <div class="control-group">
+        <%= form.label :place , class: 'control-label' %>
+        <div class="controls"
+        <%= form.text_field :place, id: :recordingstation_place %>
+        </div>
+      </div>
+    
+      <div class="control-group">
+         <%= form.label :quaketype, class: 'control-label'  %>
+        <div class="controls"
+         <%= form.text_field :quaketype, id: :recordingstation_quaketype %>
+        </div>
+      </div>
+    
+      <div class="control-group">
+        <%= form.label :horizontalError , class: 'control-label' %>
+        <div class="controls"
+        <%= form.text_field :horizontalError, id: :recordingstation_horizontalError %>
+       </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :quakeId %>
-    <%= form.text_field :quakeId, id: :recordingstation_quakeId %>
-  </div>
-
-  <div class="field">
-    <%= form.label :updated %>
-    <%= form.date_select :updated, id: :recordingstation_updated %>
-  </div>
-
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place, id: :recordingstation_place %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quaketype %>
-    <%= form.text_field :quaketype, id: :recordingstation_quaketype %>
-  </div>
-
-  <div class="field">
-    <%= form.label :horizontalError %>
-    <%= form.text_field :horizontalError, id: :recordingstation_horizontalError %>
-  </div>
-
-  <div class="field">
-    <%= form.label :depthError %>
-    <%= form.text_field :depthError, id: :recordingstation_depthError %>
-  </div>
-
-  <div class="field">
-    <%= form.label :magError %>
-    <%= form.text_field :magError, id: :recordingstation_magError %>
-  </div>
-
-  <div class="field">
-    <%= form.label :magNst %>
-    <%= form.number_field :magNst, id: :recordingstation_magNst %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :recordingstation_status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :locationSource %>
-    <%= form.text_field :locationSource, id: :recordingstation_locationSource %>
-  </div>
-
-  <div class="field">
-    <%= form.label :stationCode %>
-    <%= form.text_field :stationCode, id: :recordingstation_stationCode %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+      <div class="control-group">
+        <%= form.label :depthError , class: 'control-label' %>
+        <div class="controls"
+        <%= form.text_field :depthError, id: :recordingstation_depthError %>
+       </div>
+    </div>
+      <div class="control-group">
+        <%= form.label :magError , class: 'control-label' %>
+        <div class="controls"
+        <%= form.text_field :magError, id: :recordingstation_magError %>
+      </div>
+    </div>
+        <div class="control-group">
+        <%= form.label :magNst , class: 'control-label' %>
+        <div class="controls"
+        <%= form.number_field :magNst, id: :recordingstation_magNst %>
+        </div>
+     </div>
+      <div class="control-group">
+        <%= form.label :status, class: 'control-label'  %>
+        <div class="controls"
+        <%= form.text_field :status, id: :recordingstation_status %>
+        </div>
+    </div>
+      <div class="control-group">
+          <%= form.label :locationSource , class: 'control-label' %>
+        <div class="controls"
+          <%= form.text_field :locationSource, id: :recordingstation_locationSource %>
+        </div>
+    </div>
+        <div class="control-group">
+          <%= form.label :stationCode, class: 'control-label'  %>
+        <div class="controls"
+          <%= form.text_field :stationCode, id: :recordingstation_stationCode %>
+        </div>
+    </div>
+      <div class="control-group">
+        <div class="controls"
+          <%= form.submit %>
+        </div>
+      </div>
   </div>
 <% end %>
