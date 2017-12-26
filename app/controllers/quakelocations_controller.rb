@@ -4,7 +4,17 @@ class QuakelocationsController < ApplicationController
   # GET /quakelocations
   # GET /quakelocations.json
   def index
+    
+  if params[:search].present?
+    @quakelocations = Quakelocation.new(params[:search], 50) 
+  else
     @quakelocations = Quakelocation.all
+  end
+  end
+
+
+  def address
+  @quakelocation= Quakelocation.new
   end
 
   # GET /quakelocations/1
@@ -60,6 +70,13 @@ class QuakelocationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def import
+  Quakelocation.import(params[:file])
+  redirect_to quakelocations_path, notice: "Recordingstations Added Successfully"
+
+end 
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

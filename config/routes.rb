@@ -1,6 +1,11 @@
  Rails.application.routes.draw do
-  resources :quakelocations
+  
+  resources :quakelocations do
+  collection {post :import }
+  end
+  
   resources :locations
+  
   resources :recordingstations do 
    collection {post :import }
   end
@@ -23,5 +28,4 @@
   
   root to: 'welcome#index' 
   
-  
-end
+ end

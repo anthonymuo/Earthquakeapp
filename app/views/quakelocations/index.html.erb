@@ -1,44 +1,70 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyBKUKfMMrGWhAA8lZYd0WYyPrvzLNuX9As"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
+
 <p id="notice"><%= notice %></p>
 
 <h1>Quakelocations</h1>
+<%= form_tag quakelocations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Time</th>
-      <th>Mag</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @quakelocations.each do |quakelocation| %>
-      <tr>
-        <td><%= quakelocation.address %></td>
-        <td><%= quakelocation.latitude %></td>
-        <td><%= quakelocation.longitude %></td>
-        <td><%= quakelocation.time %></td>
-        <td><%= quakelocation.mag %></td>
-        
-         <p>
-         <strong>Address:</strong>
-         <%= quakelocation.address %>
-         </p>
-        
-         <p>
-        
-        
-        <td><%= link_to 'Show', quakelocation %></td>
-        <td><%= link_to 'Edit', edit_quakelocation_path(quakelocation) %></td>
-        <td><%= link_to 'Destroy', quakelocation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="media">     
+  <div class="media-body">   
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Time</th>
+          <th>Mag</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @quakelocations.each do |quakelocation| %>
+          <tr>
+            <td><%= quakelocation.address %></td>
+            <td><%= quakelocation.latitude %></td>
+            <td><%= quakelocation.longitude %></td>
+            <td><%= quakelocation.time %></td>
+            <td><%= quakelocation.mag %></td>
+            
+            <td><%= link_to 'Show', quakelocation , Class: 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_quakelocation_path(quakelocation) , Class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', quakelocation, method: :delete, Class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+   </div>
+</div>
 <br>
-
+  
+<h3>Import Quakelocation</h3>
+<%= form_tag import_quakelocations_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Uplaod Quakelocations" %>
+    <% end %>
+    
+    
 <%= link_to 'New Quakelocation', new_quakelocation_path %>
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+<script>
+  handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+
