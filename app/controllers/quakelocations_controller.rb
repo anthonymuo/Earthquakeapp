@@ -5,16 +5,23 @@ class QuakelocationsController < ApplicationController
   # GET /quakelocations.json
   def index
     
-  if params[:search].present?
-    @quakelocations = Quakelocation.new(params[:search], 50) 
-  else
-    @quakelocations = Quakelocation.all
-  end
+    if params[:search].present?
+      @quakelocations = Quakelocation.new(params[:search], 50) 
+    else
+      @quakelocations = Quakelocation.all
+      @hash = Gmaps4rails.build_markers(@quakelocations) do |quakelocation, marker|
+        marker.lat quakelocation.latitude
+        marker.lng quakelocation.longitude
+        #marker.infowindow quakelocation.address
+        #marker.infowindow quakelocation.mag
+        marker.infowindow quakelocation.time
+      end
+    end
   end
 
 
   def address
-  @quakelocation= Quakelocation.new
+  @quakelocation = Quakelocation.new
   end
 
   # GET /quakelocations/1
