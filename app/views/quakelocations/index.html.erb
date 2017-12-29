@@ -13,6 +13,7 @@
 <% end %>
 
 
+
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
@@ -61,7 +62,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 <br>
   
 <h3>Import Quakelocation</h3>
-<%= form_tag import_quakelocations_path, multipart: true do %>
+    <%= form_tag import_quakelocations_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Uplaod Quakelocations" %>
     <% end %>
@@ -69,16 +70,4 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     
 <%= link_to 'New Quakelocation', new_quakelocation_path %>
 
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-<script>
-  handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
 

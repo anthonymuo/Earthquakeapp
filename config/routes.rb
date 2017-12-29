@@ -23,7 +23,8 @@
   get 'welcome/faq'
 
   get 'welcome/data'
-
+  
+ # resources :quakelocations
   resources :earthquakes
   
   root to: 'welcome#index' 
