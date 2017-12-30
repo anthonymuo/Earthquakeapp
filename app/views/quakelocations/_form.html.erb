@@ -1,42 +1,52 @@
-<%= form_with(model: quakelocation, local: true) do |form| %>
-  <% if quakelocation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(quakelocation.errors.count, "error") %> prohibited this quakelocation from being saved:</h2>
-
-      <ul>
-      <% quakelocation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row">
+    <%= form_with(model: quakelocation, local: true) do |form| %>
+      <% if quakelocation.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(quakelocation.errors.count, "error") %> prohibited this quakelocation from being saved:</h2>
+    
+          <ul>
+          <% quakelocation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    
+      <div class="control-group">
+        <%= form.label :address, Class: 'control-label' %>
+        <div class="controls">
+        <%= form.text_field :address, id: :quakelocation_address %>
+      </div>
+     </div>
+      <div class="control-group">
+        <%= form.label :latitude, Class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :latitude, id: :quakelocation_latitude %>
+      </div>
+     </div>
+      <div class="control-group">
+        <%= form.label :longitude, Class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :longitude, id: :quakelocation_longitude %>
+      </div>
+     </div>
+      <div class="control-group">
+        <%= form.label :time, Class: 'control-label' %>
+        <div class="controls">
+          <%= form.datetime_select :time, id: :quakelocation_time %>
+      </div>
+     </div>
+      <div class="control-group">
+        <%= form.label :mag, Class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :mag, id: :quakelocation_mag %>
+      </div>
+     </div>
+      <div class="actions">
+        <div class="controls">
+          <%= form.submit %>
+         </div>
+      </div>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :quakelocation_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :quakelocation_latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :quakelocation_longitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.datetime_select :time, id: :quakelocation_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mag %>
-    <%= form.text_field :mag, id: :quakelocation_mag %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
