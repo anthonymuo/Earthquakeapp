@@ -19,11 +19,19 @@
               <li><%= link_to "Features", welcome_features_path %></li>
               <li><%= link_to "FAQs", welcome_faq_path %></li>
               <li><%= link_to "Data", welcome_data_path %></li>
-              <li><%= link_to "Earthquakes", earthquakes_path %></li>
+            
               
               
               <% if current_user %>
               <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              
+                <li> <%= link_to "Earthquakes", earthquakes_path %></li>
+                <li> <%= link_to "Quakelocations", quakelocations_path %></li>
+                <li> <%= link_to "Recordingstations", recordingstations_path %></li>
+                
+            
+      
+              
               <% else %>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
               <li><%= link_to "Sign In", new_user_session_path %></li>
