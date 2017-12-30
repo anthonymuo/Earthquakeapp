@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.4'
 #gem ruby '2.3.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -62,5 +62,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 
 group :production do
-gem 'pg', '~> 0.18'
+gem 'pg'
 end
+# group :production, :staging do
+  # gem 'pg'
+# end
