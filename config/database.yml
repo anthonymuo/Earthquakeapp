@@ -81,11 +81,22 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
+production:
+DATABASE_URL:             postgres://rtokvjofjnxdhq:795dca790376172ec96202928b589fc68803fb066212d3d6e8d7302133e31751@ec2-54-83-46-116.compute-1.amazonaws.com:5432/dc1vurb5h0vjtp
+LANG:                     en_US.UTF-8
+RACK_ENV:                 production
+RAILS_ENV:                production
+RAILS_LOG_TO_STDOUT:      enabled
+RAILS_SERVE_STATIC_FILES: enabled
+SECRET_KEY_BASE:          56fe88bfa3c13598230b601e4f65ec656c9ae8f4d795816538abaf9f41eab9acfcb3bbda379c713590b1e748f8e584a977cf795c255dd6262bb45279a944d36b
+
+
+
+
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: earth_monitor_app_production
-  username: earth_monitor_app
-  password: <%= ENV['EARTH_MONITOR_APP_DATABASE_PASSWORD'] %>
+#production:
+ # <<: *default
+ # database: earth_monitor_app_production
+ # username: earth_monitor_app
+  #password: <%= ENV['EARTH_MONITOR_APP_DATABASE_PASSWORD'] %>
