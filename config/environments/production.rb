@@ -88,4 +88,25 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.default :charset => "utf-8"
+config.action_mailer.default_url_options = { :host => https://earthquakeap.herokuapp.com }
+
+config.action_mailer.smtp_settings = {
+  :user_name => ENV[app83639240@heroku.com],
+  :password => ENV[pl8cmddu4697],
+  :address => 'smtp.sendgrid.net',
+  :domain => 'earthquakeap.herokuapp.com',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
+
+  
+  
 end

@@ -24,7 +24,7 @@
               
               <% if current_user %>
               <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-              
+
                 <li> <%= link_to "Earthquakes", earthquakes_path %></li>
                 <li> <%= link_to "Quakelocations", quakelocations_path %></li>
                 <li> <%= link_to "Recordingstations", recordingstations_path %></li>
