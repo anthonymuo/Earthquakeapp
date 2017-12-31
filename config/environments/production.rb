@@ -98,8 +98,8 @@ config.action_mailer.default :charset => "utf-8"
 config.action_mailer.default_url_options = { :host => 'https://earthquakeap.herokuapp.com' }
 
 config.action_mailer.smtp_settings = {
-  :user_name => ENV[app83639240@heroku.com],
-  :password => ENV[pl8cmddu4697],
+  :user_name => ENV['app83639240@heroku.com'],
+  :password => ENV['pl8cmddu4697'],
   :address => 'smtp.sendgrid.net',
   :domain => 'earthquakeap.herokuapp.com',
   :port => 587,
