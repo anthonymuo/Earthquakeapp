@@ -18,14 +18,15 @@ module EarthMonitorApp
  
  
  ActionMailer::Base.smtp_settings = {
-  :user_name => 'your_sendgrid_username',
-  :password => 'your_sendgrid_password',
-  :domain => 'yourdomain.com',
+  :user_name => 'app83639240@heroku.com',
+  :password => 'pl8cmddu4697',
+  :domain => 'earthquakeap.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
-  
+
   end
 end
+      
